@@ -37,5 +37,18 @@ namespace Collection
             return stringsList;
             
         }
+
+        public Dictionary<string, int> DictionaryOperations(Dictionary<string, int> dictionary)
+        {
+            var keys = dictionary.Keys.ToList();
+            if(keys.Contains("scuba"))
+            {
+                if(dictionary["scuba"] == 6)
+                {
+                    dictionary["Empire"] = 6;
+                }
+            }
+            return dictionary;
+        }
     }
 }

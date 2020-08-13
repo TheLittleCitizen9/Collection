@@ -14,6 +14,16 @@ namespace Collection
             {
                 Console.WriteLine(item);
             }
+
+            Console.WriteLine("==================");
+
+            Dictionary<string, int> dict = new Dictionary<string, int>();
+            dict["scuba"] = 6;
+            var newDict = collectionsFunctions.DictionaryOperations(dict);
+            foreach (KeyValuePair<string, int> item in newDict)
+            {
+                Console.WriteLine($"{item.Key} : { item.Value}");
+            }
         }
     }
 }
