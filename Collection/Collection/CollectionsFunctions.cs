@@ -7,7 +7,7 @@ namespace Collection
 {
     public class CollectionsFunctions
     {
-        public List<string> ListOperations(List<string> stringsList)
+        public void ListOperations(ref List<string> stringsList)
         {
             int middleIndex;
             if(stringsList.Count % 2!= 0)
@@ -34,11 +34,9 @@ namespace Collection
             {
                 stringsList.InsertRange(2, str);
             }
-            return stringsList;
-            
         }
 
-        public Dictionary<string, int> DictionaryOperations(Dictionary<string, int> dictionary)
+        public void DictionaryOperations(ref Dictionary<string, int> dictionary)
         {
             var keys = dictionary.Keys.ToList();
             if(keys.Contains("scuba"))
@@ -48,7 +46,19 @@ namespace Collection
                     dictionary["Empire"] = 6;
                 }
             }
-            return dictionary;
+        }
+
+        public void StackOperations(ref Stack<DateTime> stack)
+        {
+            if(stack.Count > 0)
+            {
+                var head = stack.Peek();
+                if (head < DateTime.Now)
+                {
+                    stack.Pop();
+                    stack.Push(DateTime.Now);
+                }
+            }
         }
     }
 }
